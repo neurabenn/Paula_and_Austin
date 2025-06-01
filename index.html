@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Paula & Austin | Wedding</title>
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400&display=swap" 
-    rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Paula &amp; Austin | Wedding</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body id="top">
 
-  <!-- Header with Navigation, Language Switch, and Hamburger -->
-  <header>
-    <div class="logo"><a href="#top">P &amp; A</a></div>
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav id="nav-menu">
-      <a href="#location">Location</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#transport">Transport</a>
-      <a href="#accommodations">Accommodations</a>
-      <a href="#faqs">FAQs</a>
-      <a href="#rsvp">RSVP</a>
-      <a href="#party">Wedding Party</a>
-      <div class="lang-switch"><a href="index_es.html">ES</a></div>
-    </nav>
-  </header>
+  <!-- Header & Navbar -->
+  <div class="topnav" id="myTopnav">
+    <!-- Logo -->
+    <a href="#top" class="logo">P &amp; A</a>
+    <!-- Nav links -->
+    <a href="#location">Location</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#transport">Transport</a>
+    <a href="#accommodations">Accommodations</a>
+    <a href="#faqs">FAQs</a>
+    <a href="#rsvp">RSVP</a>
+    <a href="#party">Wedding Party</a>
+    <!-- Language switch -->
+    <div class="lang-switch"><a href="index_es.html">ES</a></div>
+    <!-- Hamburger icon -->
+    <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
+  </div>
 
-  <!-- Hero Section (No Tint Overlay) -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h1>Paula &amp; Austin</h1>
@@ -45,17 +48,15 @@
       <h2>Location</h2>
       <p>Join us at our beautiful venue in Barcelona.</p>
       <div class="map-wrapper">
-        <!-- Placeholder 14th century style map image -->
         <img src="images/map-placeholder.png" alt="14th Century Map Placeholder" />
       </div>
     </div>
   </section>
 
-  <!-- Schedule Section (Now Displaying a Single PNG Image) -->
+  <!-- Schedule Section -->
   <section id="schedule" class="section">
     <div class="container">
       <h2>Schedule</h2>
-      <!-- Replace "images/schedule.png" with actual schedule image -->
       <img src="images/schedule.png" alt="Wedding Schedule" class="schedule-img" />
     </div>
   </section>
@@ -63,7 +64,7 @@
   <!-- Transport Section -->
   <section id="transport" class="section">
     <div class="container">
-      <h2>Getting To & From</h2>
+      <h2>Getting To &amp; From</h2>
       <p>We recommend taking taxis or ride-shares from the city center to the venue. There are shuttle buses departing from Park Güell at 4:00 PM. If driving, free parking is available on-site.</p>
     </div>
   </section>
@@ -99,12 +100,7 @@
     <div class="container">
       <h2>RSVP</h2>
       <p>Please RSVP by August 1, 2025.</p>
-      <!-- Link to Google Form -->
-      <a 
-        class="rsvp-button" 
-        href="https://forms.gle/your-google-form-link-here" 
-        target="_blank" 
-        rel="noopener">
+      <a class="rsvp-button" href="https://forms.gle/your-google-form-link-here" target="_blank" rel="noopener">
         RSVP Here
       </a>
     </div>
@@ -115,48 +111,35 @@
     <div class="container">
       <h2>Wedding Party</h2>
       <div class="party-grid">
-        <!-- Bride's Party Column -->
+        <!-- Bride's Party -->
         <div class="party-column">
           <h3>Bride's Party</h3>
           <div class="party-item">
-            <img 
-              src="https://source.unsplash.com/400x400?bridesmaid" 
-              alt="Maria Gonzalez" />
+            <img src="https://source.unsplash.com/400x400?bridesmaid" alt="Maria Gonzalez" />
             <p>Maria Gonzalez (Maid of Honor)</p>
           </div>
           <div class="party-item">
-            <img 
-              src="https://source.unsplash.com/400x400?bridesmaid,portrait" 
-              alt="Elena Ruiz" />
+            <img src="https://source.unsplash.com/400x400?bridesmaid,portrait" alt="Elena Ruiz" />
             <p>Elena Ruiz (Bridesmaid)</p>
           </div>
           <div class="party-item">
-            <img 
-              src="https://source.unsplash.com/400x400?bridesmaid,portrait" 
-              alt="Carla Fernandez" />
+            <img src="https://source.unsplash.com/400x400?bridesmaid,portrait" alt="Carla Fernandez" />
             <p>Carla Fernandez (Bridesmaid)</p>
           </div>
         </div>
-
-        <!-- Groom's Party Column -->
+        <!-- Groom's Party -->
         <div class="party-column">
           <h3>Groom's Party</h3>
           <div class="party-item">
-            <img 
-              src="https://source.unsplash.com/400x400?groomsman" 
-              alt="John Smith" />
+            <img src="https://source.unsplash.com/400x400?groomsman" alt="John Smith" />
             <p>John Smith (Best Man)</p>
           </div>
           <div class="party-item">
-            <img 
-              src="https://source.unsplash.com/400x400?groomsman,portrait" 
-              alt="Michael Lee" />
+            <img src="https://source.unsplash.com/400x400?groomsman,portrait" alt="Michael Lee" />
             <p>Michael Lee (Groomsman)</p>
           </div>
           <div class="party-item">
-            <img 
-              src="https://source.unsplash.com/400x400?groomsman,portrait" 
-              alt="David Brown" />
+            <img src="https://source.unsplash.com/400x400?groomsman,portrait" alt="David Brown" />
             <p>David Brown (Groomsman)</p>
           </div>
         </div>
@@ -171,14 +154,16 @@
     </div>
   </footer>
 
-  <!-- JavaScript for Hamburger Toggle -->
+  <!-- JavaScript to toggle the "responsive" class on the navigation -->
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
+    function toggleNav() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
   </script>
-
 </body>
 </html>

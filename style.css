@@ -1,16 +1,16 @@
 /*---------------------------------------------
   Modern, sleek wedding page for Paula & Austin
-  Updated: Responsive mobile menu with hamburger
+  Updated: True mobile-responsive hamburger menu (W3Schools-style)
 ----------------------------------------------*/
 
 :root {
-  --soft-pink:  #B0666A;
-  --burgundy:   #44131D;
-  --charcoal:   #20232B;
-  --teal:       #56847E;
-  --cream-bg:   #F5EEE8;
-  --white:      #FFFFFF;
-  --forest:     #243D32; /* from initial palette */
+  --soft-pink: #B0666A;
+  --burgundy: #44131D;
+  --charcoal: #20232B;
+  --teal: #56847E;
+  --cream-bg: #F5EEE8;
+  --white: #FFFFFF;
+  --forest: #243D32; /* from initial palette */
 }
 
 * {
@@ -40,63 +40,56 @@ a:hover {
   opacity: 0.8;
 }
 
-/* Header */
-header {
+/* ---------------------------------------
+   HEADER & NAVIGATION (W3Schools-style)
+--------------------------------------- */
+.topnav {
+  background-color: rgba(36, 61, 50, 0.9);
+  overflow: hidden;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  background-color: rgba(36, 61, 50, 0.9); /* semi-transparent forest green */
   height: 80px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0 5%;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-header .logo a {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
+.topnav a {
+  display: block;
   color: var(--white);
-}
-
-header nav {
-  display: flex;
-  gap: 1.5rem;
-}
-
-header nav a {
+  text-align: center;
+  padding: 0 1rem;
+  line-height: 80px;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--white);
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.9rem;
 }
 
-header .lang-switch a {
-  font-weight: 600;
-  color: var(--white);
-  margin-left: 2rem;
-  text-transform: uppercase;
+.topnav a.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  line-height: 80px;
 }
 
-/* Hamburger Menu */
-.hamburger {
+.topnav .lang-switch a {
+  margin-left: 1rem;
+}
+
+.topnav .icon {
   display: none;
-  flex-direction: column;
+  font-size: 1.5rem;
   cursor: pointer;
-}
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: var(--white);
-  margin: 4px 0;
-  transition: 0.3s;
+  line-height: 80px;
+  padding: 0 1rem;
 }
 
-/* Hero */
+/* ---------------------------------------
+   HERO SECTION
+--------------------------------------- */
 .hero {
   position: relative;
   width: 100%;
@@ -105,7 +98,6 @@ header .lang-switch a {
 }
 /* Removed hero::before overlay */
 
-/* Hero Content */
 .hero-content {
   position: relative;
   z-index: 1;
@@ -129,7 +121,9 @@ header .lang-switch a {
   font-weight: 300;
 }
 
-/* Generic Section Styling */
+/* ---------------------------------------
+   GENERIC SECTION STYLING
+--------------------------------------- */
 .section {
   background-color: var(--cream-bg);
   padding: 4rem 5%;
@@ -151,16 +145,9 @@ header .lang-switch a {
   text-align: left;
 }
 
-/* Schedule Section */
-/* Center a full-width or scaled PNG image */
-.schedule-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 2rem auto;
-}
-
-/* Map Section */
+/* ---------------------------------------
+   LOCATION (VINTAGE MAP IMAGE)
+--------------------------------------- */
 .map .map-wrapper {
   width: 100%;
   height: 450px;
@@ -175,7 +162,46 @@ header .lang-switch a {
   object-fit: cover;
 }
 
-/* Wedding Party Section */
+/* ---------------------------------------
+   SCHEDULE SECTION (PNG IMAGE CENTERED)
+--------------------------------------- */
+.schedule-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
+}
+
+/* ---------------------------------------
+   TRANSPORT / ACCOMMODATIONS / FAQS
+--------------------------------------- */
+/* (Use the same .section and .container as above) */
+
+/* ---------------------------------------
+   RSVP BUTTON
+--------------------------------------- */
+.rsvp-button {
+  display: inline-block;
+  background-color: var(--burgundy);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.rsvp-button:hover {
+  background-color: var(--soft-pink);
+}
+
+/* ---------------------------------------
+   WEDDING PARTY GRID
+--------------------------------------- */
 .party-grid {
   display: flex;
   gap: 2rem;
@@ -211,27 +237,9 @@ header .lang-switch a {
   font-weight: 600;
 }
 
-/* RSVP Button */
-.rsvp-button {
-  display: inline-block;
-  background-color: var(--burgundy);
-  color: var(--white);
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
-}
-.rsvp-button:hover {
-  background-color: var(--soft-pink);
-}
-
-/* Footer */
+/* ---------------------------------------
+   FOOTER
+--------------------------------------- */
 footer {
   background-color: var(--forest);
   color: var(--white);
@@ -242,37 +250,35 @@ footer p {
   font-size: 0.9rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  /* Show hamburger */
-  .hamburger {
-    display: flex;
+/* ---------------------------------------
+   RESPONSIVE: MOBILE (≤768px)
+--------------------------------------- */
+@media screen and (max-width: 768px) {
+  .topnav a:not(.logo) {
+    display: none; /* hide all links except logo */
   }
-  /* Hide nav by default */
-  header nav {
-    display: none;
+  .topnav a.icon {
+    display: block; /* show hamburger */
     position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background-color: rgba(36, 61, 50, 0.9);
+    right: 0;
+  }
+  .topnav.responsive {
+    height: auto;
     flex-direction: column;
-    align-items: center;
-    padding: 1rem 0;
+    align-items: flex-start;
   }
-  /* Show nav when active */
-  header nav.active {
-    display: flex;
+  .topnav.responsive a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding-left: 1rem;
   }
-  /* Stack nav links */
-  header nav a {
-    margin: 1rem 0;
+  .topnav.responsive a.icon {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
-  /* Hide lang-switch; moved inside nav */
-  header .lang-switch {
-    display: none;
-  }
-  /* Adjust hero content font sizes */
+  /* Adjust hero content for mobile */
   .hero-content h1 {
     font-size: 2.5rem;
   }
