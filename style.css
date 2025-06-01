@@ -1,0 +1,275 @@
+/*---------------------------------------------
+  Modern, sleek wedding page for Paula & Austin
+  Updated: Use splash.png for hero and forest green accents
+----------------------------------------------*/
+
+:root {
+  --soft-pink:  #B0666A;
+  --burgundy:   #44131D;
+  --charcoal:   #20232B;
+  --teal:       #56847E;
+  --cream-bg:   #F5EEE8;
+  --white:      #FFFFFF;
+  --forest:     #243D32; /* from initial palette */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--charcoal);
+  scroll-behavior: smooth;
+}
+
+/* Make room for fixed header */
+body {
+  padding-top: 80px; /* equals header height */
+}
+
+a {
+  color: var(--soft-pink);
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.8;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(36, 61, 50, 0.9); /* semi-transparent forest green */
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+header .logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+header nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+header nav a {
+  font-weight: 600;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+header .lang-switch a {
+  font-weight: 600;
+  color: var(--white);
+  margin-left: 2rem;
+  text-transform: uppercase;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background: url('images/splash.png') center/cover no-repeat;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+  padding: 0 1rem;
+}
+.hero-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+.hero-content .date {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/* Generic Section Styling */
+.section {
+  background-color: var(--cream-bg);
+  padding: 4rem 5%;
+}
+.section .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: var(--burgundy);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.section p, .section form {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Schedule Section */
+.schedule-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 600px;
+}
+.schedule-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.schedule-item .schedule-text {
+  text-align: left;
+}
+.schedule-item .schedule-text strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Map Section */
+.map .map-wrapper {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.map .map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Wedding Party Section */
+.party-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.party-column {
+  flex: 1;
+  min-width: 250px;
+}
+.party-column h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: var(--teal);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.party-item {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.party-item img {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--burgundy);
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+.party-item p {
+  font-weight: 600;
+}
+
+/* RSVP Button */
+.rsvp-button {
+  display: inline-block;
+  background-color: var(--burgundy);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.rsvp-button:hover {
+  background-color: var(--soft-pink);
+}
+
+/* Footer */
+footer {
+  background-color: var(--forest);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 5%;
+}
+footer p {
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content .date {
+    font-size: 1rem;
+  }
+  .section h2 {
+    font-size: 1.75rem;
+  }
+  .schedule-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .schedule-item .schedule-text {
+    text-align: center;
+  }
+  .party-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
