@@ -1,6 +1,6 @@
 /*---------------------------------------------
   Modern, sleek wedding page for Paula & Austin
-  Updated: Use splash.png for hero and forest green accents
+  Updated: Responsive mobile menu with hamburger
 ----------------------------------------------*/
 
 :root {
@@ -31,6 +31,7 @@ body {
   padding-top: 80px; /* equals header height */
 }
 
+/* Links */
 a {
   color: var(--soft-pink);
   text-decoration: none;
@@ -55,7 +56,7 @@ header {
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-header .logo {
+header .logo a {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   color: var(--white);
@@ -81,6 +82,20 @@ header .lang-switch a {
   text-transform: uppercase;
 }
 
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--white);
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
 /* Hero */
 .hero {
   position: relative;
@@ -88,12 +103,9 @@ header .lang-switch a {
   height: calc(100vh - 80px);
   background: url('images/splash.png') center/cover no-repeat;
 }
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0,0,0,0.5);
-}
+/* Removed hero::before overlay */
+
+/* Hero Content */
 .hero-content {
   position: relative;
   z-index: 1;
@@ -140,32 +152,12 @@ header .lang-switch a {
 }
 
 /* Schedule Section */
-.schedule-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-}
-.schedule-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  max-width: 600px;
-}
-.schedule-item img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  flex-shrink: 0;
-}
-.schedule-item .schedule-text {
-  text-align: left;
-}
-.schedule-item .schedule-text strong {
+/* Center a full-width or scaled PNG image */
+.schedule-img {
   display: block;
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
 }
 
 /* Map Section */
@@ -177,10 +169,10 @@ header .lang-switch a {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-.map .map-wrapper iframe {
+.map .map-wrapper img {
   width: 100%;
   height: 100%;
-  border: 0;
+  object-fit: cover;
 }
 
 /* Wedding Party Section */
@@ -252,6 +244,35 @@ footer p {
 
 /* Responsive */
 @media (max-width: 768px) {
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+  /* Hide nav by default */
+  header nav {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(36, 61, 50, 0.9);
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  /* Show nav when active */
+  header nav.active {
+    display: flex;
+  }
+  /* Stack nav links */
+  header nav a {
+    margin: 1rem 0;
+  }
+  /* Hide lang-switch; moved inside nav */
+  header .lang-switch {
+    display: none;
+  }
+  /* Adjust hero content font sizes */
   .hero-content h1 {
     font-size: 2.5rem;
   }
@@ -260,16 +281,5 @@ footer p {
   }
   .section h2 {
     font-size: 1.75rem;
-  }
-  .schedule-item {
-    flex-direction: column;
-    text-align: center;
-  }
-  .schedule-item .schedule-text {
-    text-align: center;
-  }
-  .party-grid {
-    flex-direction: column;
-    align-items: center;
   }
 }

@@ -9,12 +9,17 @@
     rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
+<body id="top">
 
-  <!-- Header with Navigation & Language Switch -->
+  <!-- Header with Navigation, Language Switch, and Hamburger -->
   <header>
-    <div class="logo">P &amp; A</div>
-    <nav>
+    <div class="logo"><a href="#top">P &amp; A</a></div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="nav-menu">
       <a href="#location">Location</a>
       <a href="#schedule">Schedule</a>
       <a href="#transport">Transport</a>
@@ -22,13 +27,11 @@
       <a href="#faqs">FAQs</a>
       <a href="#rsvp">RSVP</a>
       <a href="#party">Wedding Party</a>
+      <div class="lang-switch"><a href="index_es.html">ES</a></div>
     </nav>
-    <div class="lang-switch">
-      <a href="index_es.html">ES</a>
-    </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (No Tint Overlay) -->
   <section class="hero">
     <div class="hero-content">
       <h1>Paula &amp; Austin</h1>
@@ -48,48 +51,12 @@
     </div>
   </section>
 
-  <!-- Schedule Section -->
+  <!-- Schedule Section (Now Displaying a Single PNG Image) -->
   <section id="schedule" class="section">
     <div class="container">
       <h2>Schedule</h2>
-      <div class="schedule-grid">
-        <div class="schedule-item">
-          <img 
-            src="https://source.unsplash.com/random/200x200?wedding,ceremony" 
-            alt="Ceremony" />
-          <div class="schedule-text">
-            <strong>Ceremony: 5:00 PM</strong>
-            <p>Our wedding ceremony will take place in the garden overlooking the city.</p>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <img 
-            src="https://source.unsplash.com/random/200x200?wedding,cocktail" 
-            alt="Cocktail Hour" />
-          <div class="schedule-text">
-            <strong>Cocktail Hour: 6:00 PM</strong>
-            <p>Enjoy drinks and hors d'oeuvres on the terrace.</p>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <img 
-            src="https://source.unsplash.com/random/200x200?wedding,reception" 
-            alt="Reception" />
-          <div class="schedule-text">
-            <strong>Reception & Dinner: 7:00 PM</strong>
-            <p>A seated dinner followed by dancing inside our beautifully decorated hall.</p>
-          </div>
-        </div>
-        <div class="schedule-item">
-          <img 
-            src="https://source.unsplash.com/random/200x200?wedding,party" 
-            alt="After Party" />
-          <div class="schedule-text">
-            <strong>After Party: 10:00 PM</strong>
-            <p>Join us for music and cocktails at the rooftop lounge.</p>
-          </div>
-        </div>
-      </div>
+      <!-- Replace "images/schedule.png" with actual schedule image -->
+      <img src="images/schedule.png" alt="Wedding Schedule" class="schedule-img" />
     </div>
   </section>
 
@@ -203,6 +170,15 @@
       <p>&copy; Paula &amp; Austin, 2025</p>
     </div>
   </footer>
+
+  <!-- JavaScript for Hamburger Toggle -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
