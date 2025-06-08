@@ -136,3 +136,14 @@ footer p { font-size:0.9rem; }
 .topnav a {
   display: inline-block;
 }
+
+
+/* Ensure nav links always visible on mobile (no hamburger) */
+@media (max-width: 768px) {
+  .topnav a {
+    display: inline-block !important;
+  }
+  .topnav .icon {
+    display: none !important;
+  }
+}
