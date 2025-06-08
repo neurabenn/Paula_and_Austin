@@ -173,12 +173,12 @@ footer p { font-size:0.9rem; }
     overflow-x: hidden !important;
   }
   .topnav a.logo {
-    font-size: 0.5rem !important;
+    font-size: 0.01rem !important;
     margin: 0 !important;
   }
   .topnav a {
-    font-size: 0.35rem !important;
-    padding: 0 0.2rem !important;
+    font-size: 0.25rem !important;
+    padding: 0 0.1rem !important;
     line-height: 1 !important;
     white-space: nowrap !important;
   }
@@ -186,5 +186,10 @@ footer p { font-size:0.9rem; }
     content: "|";
     margin: 0 0.2rem;
     color: var(--white);
+  }
+}
+@media (max-width: 600px) {
+  .topnav a.logo {
+    display: none !important;
   }
 }
