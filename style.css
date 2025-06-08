@@ -142,3 +142,29 @@ footer p { font-size:0.9rem; }
     display: none !important;
   }
 }
+
+
+/* Mobile navbar layout: P&A above, links below with separators */
+@media (max-width: 768px) {
+  .topnav {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 1rem 5% !important;
+  }
+  .topnav a.logo {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
+    line-height: normal !important;
+  }
+  .topnav a {
+    display: inline-block !important;
+    font-size: 0.8rem !important;
+    padding: 0 0.25rem !important;
+    line-height: 1.5 !important;
+  }
+  .topnav a:not(.logo):not(:last-child)::after {
+    content: "|";
+    margin: 0 0.25rem;
+    color: var(--white);
+  }
+}
