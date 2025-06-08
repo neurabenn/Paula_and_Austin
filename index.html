@@ -19,7 +19,7 @@
     <a href="#rsvp">RSVP</a>
     <a href="#party">Wedding Party</a>
     <div class="lang-switch"><a href="index_es.html">ES</a></div>
-    <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
+    <a href="javascript:void(0);" class="icon" >&#9776;</a>
   </div>
 
   <section class="hero">
@@ -141,9 +141,8 @@
 
   <script>
     function toggleNav() {
-      var x = document.getElementById("myTopnav");
-      x.className = x.className === "topnav" ? "topnav responsive" : "topnav";
-    }
+    document.getElementById("myTopnav").classList.toggle("responsive");
+  }
   </script>
 </body>
 </html>

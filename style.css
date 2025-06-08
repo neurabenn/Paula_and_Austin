@@ -74,3 +74,19 @@ footer p { font-size:0.9rem; }
 
   .party-grid { grid-template-columns:1fr; }
 }
+
+
+/* Hero Mobile Fix */
+.hero {
+  background-image: url('images/splash.png') !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  height: calc(100vh - 80px) !important;
+}
+@media(max-width:768px) {
+  .hero {
+    background-position: top center !important;
+    height: 50vh !important;
+  }
+}
