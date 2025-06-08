@@ -1,37 +1,36 @@
+
 /*---------------------------------------------
   Modern, sleek wedding page for Paula & Austin
-  Updated: True mobile-responsive hamburger menu (W3Schools-style)
+  Updated: Enforce desktop two-column for party, mobile wrap
 ----------------------------------------------*/
 
 :root {
-  --soft-pink: #B0666A;
-  --burgundy: #44131D;
-  --charcoal: #20232B;
-  --teal: #56847E;
-  --cream-bg: #F5EEE8;
-  --white: #FFFFFF;
-  --forest: #243D32; /* from initial palette */
+  --soft-pink:  #B0666A;
+  --burgundy:   #44131D;
+  --charcoal:   #20232B;
+  --teal:       #56847E;
+  --cream-bg:   #F5EEE8;
+  --white:      #FFFFFF;
+  --forest:     #243D32;
 }
 
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 html, body {
   height: 100%;
   font-family: 'Open Sans', sans-serif;
   color: var(--charcoal);
   scroll-behavior: smooth;
 }
-
-/* Make room for fixed header */
 body {
-  padding-top: 80px; /* equals header height */
+  padding-top: 80px;
 }
 
-/* Links */
+/* Link Styles */
 a {
   color: var(--soft-pink);
   text-decoration: none;
@@ -40,12 +39,9 @@ a:hover {
   opacity: 0.8;
 }
 
-/* ---------------------------------------
-   HEADER & NAVIGATION (W3Schools-style)
---------------------------------------- */
+/* Top Navigation */
 .topnav {
-  background-color: rgba(36, 61, 50, 0.9);
-  overflow: hidden;
+  background-color: rgba(36,61,50,0.9);
   position: fixed;
   top: 0;
   width: 100%;
@@ -54,9 +50,8 @@ a:hover {
   align-items: center;
   padding: 0 5%;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-
 .topnav a {
   display: block;
   color: var(--white);
@@ -66,19 +61,11 @@ a:hover {
   font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
-
 .topnav a.logo {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
-  line-height: 80px;
 }
-
-.topnav .lang-switch a {
-  margin-left: 1rem;
-}
-
 .topnav .icon {
   display: none;
   font-size: 1.5rem;
@@ -87,43 +74,31 @@ a:hover {
   padding: 0 1rem;
 }
 
-/* ---------------------------------------
-   HERO SECTION
---------------------------------------- */
+/* Hero */
 .hero {
-  position: relative;
-  width: 100%;
   height: calc(100vh - 80px);
   background: url('images/splash.png') center/cover no-repeat;
 }
-/* Removed hero::before overlay */
-
 .hero-content {
-  position: relative;
-  z-index: 1;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   color: var(--white);
-  padding: 0 1rem;
+  text-align: center;
 }
 .hero-content h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
   letter-spacing: 2px;
-  margin-bottom: 0.5rem;
 }
 .hero-content .date {
   font-size: 1.25rem;
   font-weight: 300;
 }
 
-/* ---------------------------------------
-   GENERIC SECTION STYLING
---------------------------------------- */
+/* Sections */
 .section {
   background-color: var(--cream-bg);
   padding: 4rem 5%;
@@ -139,78 +114,44 @@ a:hover {
   margin-bottom: 1rem;
   text-align: center;
 }
-.section p, .section form {
+.section p {
   font-size: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align: left;
 }
 
-/* ---------------------------------------
-   LOCATION (VINTAGE MAP IMAGE)
---------------------------------------- */
-.map .map-wrapper {
-  width: 100%;
-  height: 450px;
-  border: 0;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* Map Link & RSVP Button */
+#location .container, #rsvp .container {
+  text-align: center;
 }
-.map .map-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ---------------------------------------
-   SCHEDULE SECTION (PNG IMAGE CENTERED)
---------------------------------------- */
-.schedule-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 2rem auto;
-}
-
-/* ---------------------------------------
-   TRANSPORT / ACCOMMODATIONS / FAQS
---------------------------------------- */
-/* (Use the same .section and .container as above) */
-
-/* ---------------------------------------
-   RSVP BUTTON
---------------------------------------- */
-.rsvp-button {
+.map-link, .rsvp-button {
   display: inline-block;
   background-color: var(--burgundy);
   color: var(--white);
   padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
+  border-radius: 5px;
   text-decoration: none;
+  font-weight: 600;
+  margin: 1rem auto;
+  transition: background-color 0.3s ease;
 }
-.rsvp-button:hover {
+.map-link:hover, .rsvp-button:hover {
   background-color: var(--soft-pink);
 }
 
-/* ---------------------------------------
-   WEDDING PARTY GRID
---------------------------------------- */
+/* Wedding Party */
 .party-grid {
   display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin-top: 2rem;
 }
 .party-column {
-  flex: 1;
-  min-width: 250px;
+  flex: 0 0 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .party-column h3 {
   font-family: 'Montserrat', sans-serif;
@@ -220,26 +161,22 @@ a:hover {
   text-align: center;
 }
 .party-item {
-  margin-bottom: 1.5rem;
+  display: inline-block;
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 .party-item img {
-  width: 100%;
-  max-width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 50%;
   border: 4px solid var(--burgundy);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   display: block;
   margin: 0 auto 0.5rem;
 }
-.party-item p {
-  font-weight: 600;
-}
 
-/* ---------------------------------------
-   FOOTER
---------------------------------------- */
+/* Footer */
 footer {
   background-color: var(--forest);
   color: var(--white);
@@ -250,42 +187,61 @@ footer p {
   font-size: 0.9rem;
 }
 
-/* ---------------------------------------
-   RESPONSIVE: MOBILE (≤768px)
---------------------------------------- */
+/* Mobile (≤768px) */
 @media screen and (max-width: 768px) {
-  .topnav a:not(.logo) {
-    display: none; /* hide all links except logo */
-  }
-  .topnav a.icon {
-    display: block; /* show hamburger */
-    position: absolute;
-    right: 0;
-  }
-  .topnav.responsive {
-    height: auto;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .topnav.responsive a {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding-left: 1rem;
-  }
-  .topnav.responsive a.icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  /* Adjust hero content for mobile */
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-  .hero-content .date {
-    font-size: 1rem;
-  }
-  .section h2 {
-    font-size: 1.75rem;
-  }
+  /* Hamburger nav */
+  .topnav a:not(.logo):not(.icon) { display: none; }
+  .topnav .icon { display: block; position: absolute; right: 0; }
+  .topnav.responsive { flex-direction: column; height: auto; }
+  .topnav.responsive a { display: block; text-align: left; padding-left: 1rem; }
+
+  /* Party columns full width */
+  .party-grid { flex-wrap: wrap; justify-content: center; }
+  .party-column { flex: 0 0 100%; max-width: 100%; }
+}
+
+
+/* Expand party section to full viewport width within container padding */
+#party .container {
+  max-width: none !important;
+  padding: 0 5% !important;
+}
+
+/* Ensure party-grid spans full width */
+#party .party-grid {
+  width: 100%;
+}
+
+/* Optionally adjust column width narrower for more separation */
+.party-column {
+  flex: 0 0 40% !important;
+  max-width: 40% !important;
+}
+
+
+/* ---------------------------------------
+   Wedding Party: Grid-based two columns
+--------------------------------------- */
+.party-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 2rem !important;
+  width: 100% !important;
+  margin-top: 2rem !important;
+}
+.party-column {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+
+/* Schedule Image Responsive */
+.schedule-img {
+  display: block;
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  margin: 2rem auto;
 }
