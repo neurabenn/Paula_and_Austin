@@ -173,11 +173,11 @@ footer p { font-size:0.9rem; }
     overflow-x: hidden !important;
   }
   .topnav a.logo {
-    font-size: 1rem !important;
+    font-size: 0.5rem !important;
     margin: 0 !important;
   }
   .topnav a {
-    font-size: 0.65rem !important;
+    font-size: 0.35rem !important;
     padding: 0 0.2rem !important;
     line-height: 1 !important;
     white-space: nowrap !important;
