@@ -144,14 +144,7 @@ footer p { font-size:0.9rem; }
 }
 
 
-/* Mobile navbar layout: P&A above, links below with separators */
-@media (max-width: 768px) {
-  .topnav {
-    flex-direction: column !important;
-    align-items: center !important;
-    padding: 1rem 5% !important;
-  }
-  .topnav a.logo {
+.topnav a.logo {
     font-size: 2rem !important;
     margin-bottom: 0.5rem !important;
     line-height: normal !important;
@@ -165,6 +158,33 @@ footer p { font-size:0.9rem; }
   .topnav a:not(.logo):not(:last-child)::after {
     content: "|";
     margin: 0 0.25rem;
+    color: var(--white);
+  }
+}
+
+
+/* Mobile navbar: single-line, reduced font, no scroll */
+@media (max-width: 768px) {
+  .topnav {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0.5rem 5% !important;
+    overflow-x: hidden !important;
+  }
+  .topnav a.logo {
+    font-size: 1rem !important;
+    margin: 0 !important;
+  }
+  .topnav a {
+    font-size: 0.65rem !important;
+    padding: 0 0.2rem !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+  .topnav a:not(.logo):not(:last-child)::after {
+    content: "|";
+    margin: 0 0.2rem;
     color: var(--white);
   }
 }
