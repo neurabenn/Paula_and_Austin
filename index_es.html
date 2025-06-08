@@ -20,7 +20,7 @@
     <a href="#rsvp">RSVP</a>
     <a href="#party">Cortejo</a>
     <div class="lang-switch"><a href="index.html">EN</a></div>
-    <a href="javascript:void(0);" class="icon" >&#9776;</a>
+    <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
   </div>
 
   <section class="hero">
@@ -138,10 +138,18 @@
 
   <footer><div class="container"><p>&copy; Paula &amp; Austin, 2025</p></div></footer>
 
+  
   <script>
     function toggleNav() {
-    document.getElementById("myTopnav").classList.toggle("responsive");
-  }
+      document.getElementById("myTopnav").classList.toggle("responsive");
+    }
+    document.querySelector(".topnav .icon").addEventListener("click", toggleNav);
+    document.querySelectorAll(".topnav a:not(.logo)").forEach(function(link) {
+      link.addEventListener("click", function() {
+        document.getElementById("myTopnav").classList.remove("responsive");
+      });
+    });
   </script>
+
 </body>
 </html>
