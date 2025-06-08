@@ -1,7 +1,7 @@
 
 /*---------------------------------------------
   Modern, sleek wedding page for Paula & Austin
-  Updated: Enforce desktop two-column for party, mobile wrap
+  Finalized style with robust two-column party layout
 ----------------------------------------------*/
 
 :root {
@@ -14,234 +14,63 @@
   --forest:     #243D32;
 }
 
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html, body {
-  height: 100%;
-  font-family: 'Open Sans', sans-serif;
-  color: var(--charcoal);
-  scroll-behavior: smooth;
-}
-body {
-  padding-top: 80px;
-}
+/* Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; font-family: 'Open Sans', sans-serif; color: var(--charcoal); scroll-behavior: smooth; }
+body { padding-top: 80px; }
 
 /* Link Styles */
-a {
-  color: var(--soft-pink);
-  text-decoration: none;
-}
-a:hover {
-  opacity: 0.8;
-}
+a { color: var(--soft-pink); text-decoration: none; }
+a:hover { opacity: 0.8; }
 
 /* Top Navigation */
 .topnav {
-  background-color: rgba(36,61,50,0.9);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  padding: 0 5%;
-  z-index: 1000;
+  background: rgba(36,61,50,0.9);
+  position: fixed; top: 0; width: 100%; height: 80px;
+  display: flex; align-items: center; padding: 0 5%; z-index: 1000;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-.topnav a {
-  display: block;
-  color: var(--white);
-  text-align: center;
-  padding: 0 1rem;
-  line-height: 80px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.topnav a.logo {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-}
-.topnav .icon {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  line-height: 80px;
-  padding: 0 1rem;
-}
+.topnav a { color: var(--white); padding: 0 1rem; line-height: 80px; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; }
+.topnav a.logo { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; }
+.topnav .icon { display: none; font-size: 1.5rem; cursor: pointer; line-height:80px; }
 
-/* Hero */
-.hero {
-  height: calc(100vh - 80px);
-  background: url('images/splash.png') center/cover no-repeat;
-}
-.hero-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: var(--white);
-  text-align: center;
-}
-.hero-content h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3rem;
-  letter-spacing: 2px;
-}
-.hero-content .date {
-  font-size: 1.25rem;
-  font-weight: 300;
-}
+/* Hero Section */
+.hero { height: calc(100vh - 80px); background: url('images/splash.png') center/cover no-repeat; }
+.hero-content { display: flex; flex-direction: column; justify-content: center; align-items: center; height:100%; color:#fff; text-align:center; }
+.hero-content h1 { font-family:'Montserrat',sans-serif; font-size:3rem; letter-spacing:2px; }
+.hero-content .date { font-size:1.25rem; font-weight:300; }
 
-/* Sections */
-.section {
-  background-color: var(--cream-bg);
-  padding: 4rem 5%;
-}
-.section .container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.section h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
-  color: var(--burgundy);
-  margin-bottom: 1rem;
-  text-align: center;
-}
-.section p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  text-align: left;
-}
+/* Section Base */
+.section { background: var(--cream-bg); padding: 4rem 5%; }
+.section .container { max-width:800px; margin:0 auto; }
+.section h2 { font-family:'Montserrat',sans-serif; font-size:2rem; color:var(--burgundy); margin-bottom:1rem; text-align:center; }
+.section p, .section ul { font-size:1rem; margin-bottom:1rem; text-align:left; }
 
-/* Map Link & RSVP Button */
-#location .container, #rsvp .container {
-  text-align: center;
-}
-.map-link, .rsvp-button {
-  display: inline-block;
-  background-color: var(--burgundy);
-  color: var(--white);
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
-  margin: 1rem auto;
-  transition: background-color 0.3s ease;
-}
-.map-link:hover, .rsvp-button:hover {
-  background-color: var(--soft-pink);
-}
+/* Button Styles */
+#location .container, #rsvp .container { text-align:center; }
+.map-link, .rsvp-button { display:inline-block; background:var(--burgundy); color:#fff; padding:0.75rem 1.5rem; border-radius:5px; font-weight:600; margin:1rem auto; transition:background 0.3s; }
+.map-link:hover, .rsvp-button:hover { background:var(--soft-pink); }
 
-/* Wedding Party */
-.party-grid {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-.party-column {
-  flex: 0 0 45%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.party-column h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-  color: var(--teal);
-  margin-bottom: 1rem;
-  text-align: center;
-}
-.party-item {
-  display: inline-block;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-.party-item img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border: 4px solid var(--burgundy);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  display: block;
-  margin: 0 auto 0.5rem;
-}
+/* Schedule Image */
+.schedule-img { display:block; max-width:600px; width:100%; height:auto; margin:2rem auto; }
+
+/* Wedding Party Grid */
+.party-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; width:100%; margin-top:2rem; }
+.party-column { display:flex; flex-direction:column; align-items:center; }
+.party-column h3 { font-family:'Montserrat',sans-serif; font-size:1.5rem; color:var(--teal); margin-bottom:1rem; }
+.party-item { text-align:center; margin-bottom:1.5rem; }
+.party-item img { width:150px; height:150px; object-fit:cover; border:4px solid var(--burgundy); border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); margin-bottom:0.5rem; }
 
 /* Footer */
-footer {
-  background-color: var(--forest);
-  color: var(--white);
-  text-align: center;
-  padding: 2rem 5%;
-}
-footer p {
-  font-size: 0.9rem;
-}
+footer { background:var(--forest); color:#fff; text-align:center; padding:2rem 5%; }
+footer p { font-size:0.9rem; }
 
-/* Mobile (≤768px) */
-@media screen and (max-width: 768px) {
-  /* Hamburger nav */
-  .topnav a:not(.logo):not(.icon) { display: none; }
-  .topnav .icon { display: block; position: absolute; right: 0; }
-  .topnav.responsive { flex-direction: column; height: auto; }
-  .topnav.responsive a { display: block; text-align: left; padding-left: 1rem; }
+/* Responsive: Mobile */
+@media(max-width:768px) {
+  .topnav a:not(.logo):not(.icon) { display:none; }
+  .topnav .icon { display:block; position:absolute; right:0; }
+  .topnav.responsive { flex-direction:column; height:auto; }
+  .topnav.responsive a { display:block; text-align:left; padding-left:1rem; }
 
-  /* Party columns full width */
-  .party-grid { flex-wrap: wrap; justify-content: center; }
-  .party-column { flex: 0 0 100%; max-width: 100%; }
-}
-
-
-/* Expand party section to full viewport width within container padding */
-#party .container {
-  max-width: none !important;
-  padding: 0 5% !important;
-}
-
-/* Ensure party-grid spans full width */
-#party .party-grid {
-  width: 100%;
-}
-
-/* Optionally adjust column width narrower for more separation */
-.party-column {
-  flex: 0 0 40% !important;
-  max-width: 40% !important;
-}
-
-
-/* ---------------------------------------
-   Wedding Party: Grid-based two columns
---------------------------------------- */
-.party-grid {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 2rem !important;
-  width: 100% !important;
-  margin-top: 2rem !important;
-}
-.party-column {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  width: 100% !important;
-}
-
-
-/* Schedule Image Responsive */
-.schedule-img {
-  display: block;
-  max-width: 600px;
-  width: 100%;
-  height: auto;
-  margin: 2rem auto;
+  .party-grid { grid-template-columns:1fr; }
 }
