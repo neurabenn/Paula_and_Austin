@@ -1,3 +1,4 @@
+
 /*---------------------------------------------
   Modern, sleek wedding page for Paula & Austin
   Finalized style with robust two-column party layout
@@ -31,7 +32,7 @@ a:hover { opacity: 0.8; }
 }
 .topnav a { color: var(--white); padding: 0 1rem; line-height: 80px; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; }
 .topnav a.logo { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; }
-.topnav .icon { display: none; font-size: 1.5rem; cursor: pointer; line-height:80px; }
+
 
 /* Hero Section */
 .hero { height: calc(100vh - 80px); background: url('images/splash.png') center/cover no-repeat; }
@@ -72,13 +73,7 @@ footer p { font-size:0.9rem; }
     display: none;
   }
   /* Show hamburger icon */
-  .topnav .icon {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 1rem;
-    z-index: 1100;
-  }
+  
   /* When responsive class is added, show links */
   .topnav.responsive {
     flex-direction: column;
@@ -98,4 +93,46 @@ footer p { font-size:0.9rem; }
   .party-grid {
     grid-template-columns: 1fr !important;
   }
+}
+
+
+/* Improved Mobile Hamburger Positioning */
+@media (max-width: 768px) {
+  .topnav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  /* Logo stays first */
+  .topnav a.logo {
+    order: 0;
+  }
+  /* Hamburger icon next, static */
+  
+  /* Hide links by default */
+  .topnav a:not(.logo):not(.icon) {
+    display: none !important;
+    order: 2;
+  }
+  /* When responsive, show links below */
+  .topnav.responsive a:not(.icon) {
+    display: block !important;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    background: rgba(36,61,50,0.95);
+  }
+}
+
+
+
+
+
+/* Always-visible scrollable navbar */
+.topnav {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.topnav a {
+  display: inline-block;
 }
