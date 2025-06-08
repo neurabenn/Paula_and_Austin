@@ -38,7 +38,19 @@ a:hover { opacity: 0.8; }
 .hero { height: calc(100vh - 80px); background: url('images/splash.png') center/cover no-repeat; }
 .hero-content { display: flex; flex-direction: column; justify-content: center; align-items: center; height:100%; color:#fff; text-align:center; }
 .hero-content h1 { font-family:'Montserrat',sans-serif; font-size:3rem; letter-spacing:2px; }
-.hero-content .date { font-size:1.25rem; font-weight:300; }
+.hero-content .date { font-size:2rem; font-weight:600; }
+.hero-content h1,
+.hero-content .date {
+  text-shadow:
+    -1px -1px 1px #111,
+     1px -1px 1px #111,
+    -1px  1px 1px #111,
+     2px  1px 1px #111,
+     0px  1px 1px #111,
+     1px  0px 1px #111,
+     0px -1px 1px #111,
+    -1px  0px 1px #111;
+}
 
 /* Section Base */
 .section { background: var(--cream-bg); padding: 4rem 5%; }
