@@ -69,9 +69,7 @@ footer p { font-size:0.9rem; }
 /* Mobile Navigation & Layout */
 @media (max-width: 768px) {
   /* Hide all links except logo and hamburger */
-  .topnav a:not(.logo):not(.icon) {
-    display: none;
-  }
+  
   /* Show hamburger icon */
   
   /* When responsive class is added, show links */
@@ -110,10 +108,7 @@ footer p { font-size:0.9rem; }
   /* Hamburger icon next, static */
   
   /* Hide links by default */
-  .topnav a:not(.logo):not(.icon) {
-    display: none !important;
-    order: 2;
-  }
+  
   /* When responsive, show links below */
   .topnav.responsive a:not(.icon) {
     display: block !important;
