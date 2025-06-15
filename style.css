@@ -186,7 +186,7 @@ footer p { font-size:0.9rem; }
   .topnav {
     flex-direction: row !important;
     justify-content: right !important;
-    align-items: center !important;
+    /* align-items: center !important; */
     padding: 0.5rem 5% !important;
     overflow-x: hidden !important;
   }
