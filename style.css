@@ -185,7 +185,7 @@ footer p { font-size:0.9rem; }
 @media (max-width: 768px) {
   .topnav {
     flex-direction: row !important;
-    justify-content: right !important;
+    justify-content: flex-start !important;
     align-items: center !important;
     padding: 0.5rem 5% !important;
     overflow-x: hidden !important;
@@ -212,3 +212,13 @@ footer p { font-size:0.9rem; }
   }
 }
 
+@media (max-width: 768px) {
+  /* assuming the ES container is indeed the last child */
+  .topnav > .lang-switch {
+    align-self: center !important;
+    display: inline-flex !important;
+  }
+  .topnav > .lang-switch a {
+    line-height: 1 !important;
+  }
+}
